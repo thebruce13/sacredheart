@@ -1,0 +1,19 @@
+{
+  "name": "sacred-heart-2019",
+  "version": "1.0.0",
+  "description": "Theme for sacred heart schools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebruce13/sacredheart.git"
+  },
+  "author": "Bruce Brotherton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thebruce13/sacredheart/issues"
+  },
+  "homepage": "https://github.com/thebruce13/sacredheart#readme"
+}
