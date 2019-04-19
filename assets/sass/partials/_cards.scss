@@ -1,0 +1,72 @@
+.card {
+    display: flex;
+    margin: 0 1rem 1rem;
+    padding: 1rem;
+    height: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: $light-gray;
+    color: $black;
+    text-decoration: underline transparent;
+}
+
+.card:hover .card__heading,
+.card:hover .card__button {
+    text-decoration: underline currentColor;
+}
+
+.card:hover .card__icon {
+    top: -0.25rem;
+    transform: rotate(3deg);
+}
+
+.card-icons {
+    margin-top: 2.5rem;
+    padding-top: 0;
+}
+
+@media (min-width: 42em) {
+    .card-icons {
+        margin-bottom: 4rem;
+    }
+}
+
+.card__icon {
+    position: relative;
+    top: 0;
+    margin: -2.5rem auto 0;
+    padding: 1rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: $brand-red;
+    color: $white;
+    fill: currentColor;
+    transition: top 0.2s, transform 0.2s;
+}
+
+.card__heading {
+    margin-bottom: 1rem;
+    text-align: center;
+    text-decoration: underline transparent;
+    transition: text-decoration 0.2s;
+}
+
+.card__content {
+    margin: 0;
+    padding-bottom: 2rem;
+}
+
+.card__button {
+    margin-top: auto;
+    padding: 1rem;
+    background-color: $black;
+    color: $white;
+    text-align: center;
+    text-decoration: underline transparent;
+    transition: text-decoration 0.2s, background-color 0.2s;
+}
+
+.card__button:hover{
+    background-color: $brand-red;
+}

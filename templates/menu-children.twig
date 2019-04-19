@@ -1,0 +1,10 @@
+{% if menu %}
+	<ul class="dropdown-content">
+	{% for item in menu %}
+		<li class="{{ item.classes | join(' ') }} {{ item.children ? 'dropdown' : '' }}">
+			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			{% include "menu.twig" with {'menu': item.children} %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

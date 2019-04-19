@@ -1,0 +1,44 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="content-wrapper post-type-{{post.post_type}}" id="post-{{post.ID}}">
+	<section class="article-content">
+		<h1 class="article-h1">{{post.title}}</h1>
+		<div class="article-body">
+			{{post.content}}
+		</div>
+		<!-- star, book, bell, cross -->
+		<div class="grid">
+			<div class="column">
+				<a href="{{post.card_1_link}}" class="card card-icons">
+					<svg class="card__icon icon-{{post.card_1_icon|lower}}">
+						<use xlink:href="#{{post.card_1_icon|lower}}" style="overflow:visible;"></use>
+					</svg>
+					<h2 class="card__heading">{{post.card_1_title}}</h2>
+					<p class="card__content">{{post.card_1_text}}</p>
+					<div class="card__button">{{post.card_1_button_text}}</div>
+				</a>
+			</div>
+			<div class="column">
+				<a href="{{post.card_2_link}}" class="card card-icons">
+					<svg class="card__icon icon-{{post.card_2_icon|lower}}">
+						<use xlink:href="#{{post.card_2_icon|lower}}" style="overflow:visible;"></use>
+					</svg>
+					<h2 class="card__heading">{{post.card_2_title}}</h2>
+					<p class="card__content">{{post.card_2_text}}</p>
+					<div class="card__button">{{post.card_2_button_text}}</div>
+				</a>
+			</div>
+			<div class="column">
+				<a href="{{post.card_3_link}}" class="card card-icons">
+					<svg class="card__icon icon-{{post.card_3_icon|lower}}">
+						<use xlink:href="#{{post.card_3_icon|lower}}" style="overflow:visible;"></use>
+					</svg>
+					<h2 class="card__heading">{{post.card_3_title[0]}}</h2>
+					<p class="card__content">{{post.card_3_text}}</p>
+					<div class="card__button">{{post.card_3_button_text}}</div>
+				</a>
+			</div>
+		</div>
+</div><!-- /content-wrapper -->
+{% endblock %}

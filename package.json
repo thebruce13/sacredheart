@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/thebruce13/sacredheart/issues"
   },
-  "homepage": "https://github.com/thebruce13/sacredheart#readme"
+  "homepage": "https://github.com/thebruce13/sacredheart#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-svgstore": "^7.0.1",
+    "path": "^0.12.7"
+  }
 }

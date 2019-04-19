@@ -1,0 +1,17 @@
+// Variables
+$brand-red: #D72027;
+$brand-gray: #333333;
+$white: #fafafa;
+$black: #0a0a0a;
+$light-gray: #F0F0F0;
+
+//Reset
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body *{
+    box-sizing: inherit;
+}
