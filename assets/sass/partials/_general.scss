@@ -8,3 +8,7 @@ a:not([class]) {
     text-decoration: underline;
     color: $brand-red;
 }
+
+*:focus{
+    outline: 1px dashed $black;
+}
