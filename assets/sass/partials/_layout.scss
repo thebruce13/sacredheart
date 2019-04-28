@@ -15,3 +15,18 @@
     display: flex;
     flex: 1;
 }
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+.column.text-right{
+    justify-content: flex-end;
+}
+
+.text-center {
+    text-align: center;
+}
