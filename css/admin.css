@@ -1,0 +1,8 @@
+.dashboard-form label{
+    display: block;
+}
+
+.dashboard-form input{
+    display: block;
+     width: 100%;
+}
