@@ -1,0 +1,26 @@
+.footer{
+    background-color: $black;
+    color: $white;
+}
+
+.footer a{
+    color: $white;
+    text-decoration: none;
+}
+
+.footer a:hover{
+    text-decoration: underline;
+}
+
+.footer-contact{
+    flex-direction: column;
+    justify-items: center;
+}
+
+.footer-social{
+    align-items: center;
+}
+
+.footer-copy{
+    padding: 0.5rem 1rem 0 0.5rem;
+}
