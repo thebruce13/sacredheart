@@ -1,0 +1,30 @@
+.news{
+    background-color: $medium-gray;
+    padding: 1rem;
+}
+.news-story{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.news-story:nth-of-type(odd){
+    background-color: $light-gray;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.news-header{
+    align-content: flex-end;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $black;
+}
+.news-header h2{
+    margin: 0;
+    padding: 0;
+    align-self: flex-end;
+}
+
+.news-image{
+    float: left;
+    margin-right: 1rem;
+}
