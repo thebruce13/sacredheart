@@ -41,4 +41,29 @@
 			</div>
 		</div>
 </div><!-- /content-wrapper -->
+ <div class="wrapper news row">
+            <div class="grid news-header">
+                <div class="column">
+                    <h2>News</h2>
+                </div>
+                <div class="column text-right prenav-menu">
+                    <a href="#" class="button button-red">SHS Spotlight</a>
+                </div>
+            </div>
+            {% for post in news %}
+            <div class="news-story clearfix">
+                {% if post.thumbnail.width > 250 %}
+                <img class="news-image" src="{{ TimberImage(post.thumbnail.src)|resize(250) }}"
+                    alt="{{post.thumbnail.alt}}" />
+                {% else %}
+                <img class="news-image" src="{{ post.thumbnail.src }}" alt="{{post.thumbnail.alt}}" />
+                {% endif %}
+                <div>
+                    <h3>{{post.title}}</h3><strong>{{post.date}}</strong>
+                </div>
+
+                {{post.preview}}
+            </div><br><br>
+            {% endfor %}
+        </div>
 {% endblock %}

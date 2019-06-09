@@ -4,15 +4,24 @@ svg.icon {
     height: 1em;
 }
 
+a.read-more,
 a:not([class]) {
-    text-decoration: underline;
-    color: $brand-red;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    color: $black;
+    text-decoration: underline $brand-red;
 }
 
-*:focus{
+a.read-more:hover,
+a:not([class]):hover {
+    text-decoration: underline $black;
+}
+
+*:focus {
     outline: 1px dashed $black;
 }
 
+<<<<<<< Updated upstream
 .no-bullet {
     padding-left: 0;
     list-style-type: none;
@@ -27,4 +36,46 @@ display: inline-block;
     display: table;
     content: '';
     clear: both;
+=======
+@media (max-width:$small) {
+    .hide-small {
+        display: none !important;
+    }
+}
+
+@media (min-width:$small) and (max-width:$medium) {
+    .hide-medium {
+        display: none !important;
+    }
+}
+
+@media (min-width:$small)  {
+    .hide-medium-up {
+        display: none !important;
+    }
+}
+
+@media (max-width:$small)  {
+    .hide-medium-down {
+        display: none !important;
+    }
+}
+
+@media (min-width:$small) and (max-width:$medium) {
+    .hide-large {
+        display: none !important;
+    }
+}
+
+@media (min-width:$medium)  {
+    .hide-large-up {
+        display: none !important;
+    }
+}
+
+@media (max-width:$medium)  {
+    .hide-large-down {
+        display: none !important;
+    }
+>>>>>>> Stashed changes
 }

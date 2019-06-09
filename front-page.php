@@ -25,4 +25,12 @@ $context = Timber::context();
 
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
+
+   // get latest three posts
+   $args = array(
+    'posts_per_page' => 3
+);
+$context['news'] = Timber::get_posts($args);
+
+
 Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'front-page.twig', 'page.twig' ), $context );

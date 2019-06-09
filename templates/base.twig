@@ -1,57 +1,62 @@
 {% block html_head_container %}
 
-    {% include 'html-header.twig' %}
-    {% block head %}{% endblock %}
-</head>{% endblock %}<body class="{{body_class}}" data-template="base.twig">
-<div style="display:none">{% include '/svg/svg.svg' %}</div>
-<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
-<header class="header">
-    {% block header %}
-        <div class="wrapper">
-        <div class="prenav"> 
-            <div class="row grid">
-                <div class="column text-left" role="banner">
-                <a href="/" class="header-logo">
-                   <img src="{{theme.path}}/assets/img/shs-logo.png">
-                   <span class="header-logo__text">Sacred Heart School</span>
-                   </a>
+{% include 'html-header.twig' %}
+{% block head %}{% endblock %}
+</head>{% endblock %}
+
+<body class="{{body_class}}" data-template="base.twig">
+    <div style="display:none">{% include '/svg/svg.svg' %}</div>
+    <a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+    <header class="header">
+        {% block header %}
+        <div class="main-nav wrapper">
+            <div class="prenav">
+                <div class="row grid">
+                        <a href="/" class="header-logo column text-left">
+                            <img src="{{theme.path}}/assets/img/shs-logo.png" alt="Sacread Heart Logo">
+                            <span class="header-logo__text">Sacred Heart School</span>
+                        </a>
+                    <div class="column hide-large-down">
+                        <ul class="navbar prenav-menu">
+                            {# TODO: Make these a menu so they can change them at will #}
+                            <li><a href="#">My Student's Progress</a></li>
+                            <li><a href="#">Smart Tuition</a></li>
+                        </ul>
+                    </div>
+                    <button id="js-menu-button" data-menu="nav-main" class="hide-large-up menu-button">=</button>
                 </div>
-                <div class="column">
-                    <ul class="navbar prenav-menu">
-                    {# TODO: Make these a menu so they can change them at will #}
-                        <li><a href="#">My Student's Progress</a></li>
-                        <li><a href="#">Smart Tuition</a></li>
-                    </ul>
-                </div>
-            </div>
             </div>
             <nav class="nav-main" id="nav-main" role="navigation">
                 {% include "menu.twig" with {'menu': menu.get_items} %}
             </nav>
             <!-- #nav -->
         </div>
-    {% endblock %}
-</header>
-
-<section class="content-wrapper" id="content" role="main">
-    {% if title %}
-        <h1>{{title}}</h1>
-    {% endif %}
-    <div class="wrapper {{sidebar_class}}">
-        {% block content %}
-            Sorry, no content
         {% endblock %}
-    </div>
-    {% if sidebar %}
+    </header>
+
+    <section class="content-wrapper" id="content" role="main">
+        {% if title %}
+        <h1>{{title}}</h1>
+        {% endif %}
+        <div class="wrapper row {{sidebar_class}}">
+            {% block content %}
+            Sorry, no content
+            {% endblock %}
+        </div>
+        {% if sidebar %}
         <aside class="layout-sidebar">
             {{sidebar}}
         </aside>
-    {% endif %}
-</section>
+        {% endif %}
+    </section>
 
-{% block footer %}
+    {% block footer %}
     <footer id="footer">
         {% include 'footer.twig' %}
     </footer>
     {{ function('wp_footer') }}
-{% endblock %}</body></html>
+    {% endblock %}
+    <script src="{{theme.path}}/assets/js/app.js"></script>
+</body>
+
+</html>
