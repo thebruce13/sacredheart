@@ -5,7 +5,7 @@
 * Creating a function to create our CPT
 */
  
-function custom_post_type() {
+function teacher_post_type() {
  $singular = 'Teacher';
  $plural = 'Teachers';
     // Set UI labels for Custom Post Type
@@ -34,7 +34,7 @@ function custom_post_type() {
             // Features this CPT supports in Post Editor
             'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', ),
             // You can associate this CPT with a taxonomy or custom taxonomy. 
-            // 'taxonomies'          => array( 'classes' ),
+            'taxonomies'          => array( 'subject', 'grade' ),
             /* A hierarchical CPT is like Pages and can have
             * Parent and child items. A non-hierarchical CPT
             * is like Posts.
@@ -54,7 +54,7 @@ function custom_post_type() {
         );
          
         // Registering your Custom Post Type
-        register_post_type( $plural, $args );
+        register_post_type( strtolower( $singular ), $args );
      
     }
      
@@ -63,4 +63,4 @@ function custom_post_type() {
     * unnecessarily executed. 
     */
      
-    add_action( 'init', 'custom_post_type', 0 );
+    add_action( 'init', 'teacher_post_type', 0 );

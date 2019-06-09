@@ -1,7 +1,7 @@
 <?php
 
 // Function that outputs the contents of the dashboard widget
-function dashboard_widget_function( $post, $callback_args ) {
+function dashboard_contact_widget( $post, $callback_args ) {
     ?>
     <h2>Address</h2>
 <form class="dashboard-form">
@@ -21,9 +21,13 @@ function dashboard_widget_function( $post, $callback_args ) {
 <label>Phone
     <input type="text">
 </label>
-<input type="submit" value="Save" />
+<input class="page-title-action button" type="submit" value="Save" />
 </form>
-<h2>Social</h2>
+    <?php 
+}
+
+function dashboard_social_widget( $post, $callback_args ) {
+    ?>
 <form class="dashboard-form">
   <label>Facebook Link
       <input type="text" />
@@ -37,15 +41,16 @@ function dashboard_widget_function( $post, $callback_args ) {
 <label>Pinterest Link
     <input type="text">
 </label>
-<input type="submit" value="Save" />
+<input class="page-title-action button" type="submit" value="Save" />
 </form>
-    <?php 
+    <?php
 }
 
 // Function used in the action hook
 function add_dashboard_widgets() {
-	wp_add_dashboard_widget('dashboard_widget', 'Contact Information', 'dashboard_widget_function');
+    wp_add_dashboard_widget( 'contact_widget', 'Contact Information', 'dashboard_contact_widget' );
+    wp_add_dashboard_widget( 'social_widget', 'Social Information', 'dashboard_social_widget' );
 }
 
 // Register the new dashboard widget with the 'wp_dashboard_setup' action
-add_action('wp_dashboard_setup', 'add_dashboard_widgets' );
+add_action( 'wp_dashboard_setup', 'add_dashboard_widgets' );

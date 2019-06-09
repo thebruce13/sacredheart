@@ -12,3 +12,19 @@ a:not([class]) {
 *:focus{
     outline: 1px dashed $black;
 }
+
+.no-bullet {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.inline-list > li {
+display: inline-block;
+}
+
+.clearfix::before,
+.clearfix::after {
+    display: table;
+    content: '';
+    clear: both;
+}

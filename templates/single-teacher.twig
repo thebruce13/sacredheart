@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="content-wrapper">
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<section class="article-content row clearfix">
+			<h1 class="article-h1">{{post.title}}</h1>
+			<div class="teacher-profile float-right">
+				<img class="teacher-profile-image" src="{{ post.thumbnail.src|resize('200','250') }}" />
+				<div class="teacher-content">
+					<div>
+						Subjects:
+						<ul class="no-bullet inline-list">
+							{% for item in post.terms('subject') %}
+							<li>{{ item }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<div>
+						Grades:
+						<ul class="no-bullet inline-list">
+							{% for item in post.terms('class') %}
+							<li>{{ item }}</li>
+							{% endfor %}
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="article-body">
+				{{post.content}}
+			</div>
+		</section>
+	</article>
+</div><!-- /content-wrapper -->
+{% endblock %}
