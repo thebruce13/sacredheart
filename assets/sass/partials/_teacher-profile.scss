@@ -2,15 +2,22 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: $light-gray;
-    max-width: 250px;
-    width: 100%;
-}
-
-.teacher-content {
     padding: 1rem;
+    width: 100%;
+    max-width: 250px;
+    background-color: $light-gray;
 }
 
-.teacher-profile-image {
+.teacher-profile__content {
+    display: flex;
+    padding-top: 1rem;
+}
+
+.teacher-profile__image {
     width: 100%;
+}
+
+.teacher-profile h3,
+.teacher-profile ul {
+    margin:0;
 }
