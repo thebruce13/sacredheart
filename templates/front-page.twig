@@ -1,14 +1,18 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<div class="row content-wrapper post-type-{{post.post_type}}" id="post-{{post.ID}}">
+<div class="content-wrapper post-type-{{post.post_type}}" id="post-{{post.ID}}">
 	<section class="article-content">
+	<div class="hero clearfix" style="background-image:url('{{TimberImage(post.hero_image).src}}')" />
+		<div class="row">
 		<h1 class="article-h1">{{post.title}}</h1>
-		<div class="article-body row clearfix">
+		<div class="article-body">
 			{{post.content}}
 		</div>
+	</div>
+	</div>
 		<!-- star, book, bell, cross -->
-		<div class="grid">
+		<div class="grid row ">
 			<div class="column">
 				<a href="{{post.card_1_link}}" class="card card-icons">
 					<svg class="card__icon icon-{{post.card_1_icon|lower}}">

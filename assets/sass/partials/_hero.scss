@@ -1,0 +1,17 @@
+.hero{
+    display: flex;
+    margin-bottom: 2rem;
+
+    min-height: 15vw;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.hero > .row{
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: rgba($black,0.75);
+    color: $white;
+    padding: 1rem;
+}

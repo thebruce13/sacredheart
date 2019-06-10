@@ -4,17 +4,17 @@ svg.icon {
     height: 1em;
 }
 
-a.read-more,
-a:not([class]) {
+.content-wrapper a.read-more,
+.content-wrapper a:not([class]) {
     padding-left: 0.1em;
     padding-right: 0.1em;
     color: $black;
     text-decoration: underline $brand-red;
 }
 
-a.read-more:hover,
-a:not([class]):hover {
-    text-decoration: underline $black;
+.content-wrapper a.read-more:hover,
+.content-wrapper a:not([class]):hover {
+    text-decoration: none;
 }
 
 *:focus {
@@ -35,6 +35,8 @@ display: inline-block;
     display: table;
     content: '';
     clear: both;
+}
+
 @media (max-width:$small) {
     .hide-small {
         display: none !important;

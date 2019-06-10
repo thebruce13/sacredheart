@@ -6,6 +6,8 @@ $black: #0a0a0a;
 $light-gray: #F0F0F0;
 $medium-gray: #C4C4C4;
 $global-width: 1024px;
+$header-font-family: Montserrat, Verdana, Geneva, sans-serif;
+$body-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 
 //media query variables
 $large: 72em;
@@ -17,7 +19,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-family: $body-font-family;
 }
 
 body *{

@@ -155,6 +155,7 @@
         border-top: none;
         background-color: rgba($black, 0.8);
         transition: transform 0s;
+        overflow-y: hidden;
     }
 }
 

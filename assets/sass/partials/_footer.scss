@@ -6,14 +6,26 @@
     color: $white;
 }
 
+.footer-icon {
+    fill: currentColor;
+    padding: 0.5rem;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+}
+
+.footer-icon:hover{
+    background-color: #3b5998;
+}
+
 .footer a{
     display: inline-block;
     color: $white;
-    text-decoration: underline $brand-red;
+    text-decoration: underline;
 }
 
 .footer a:hover{
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .footer-contact{
