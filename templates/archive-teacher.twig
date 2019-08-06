@@ -1,0 +1,36 @@
+{# This file demonstrates using most of the index.twig template and modifying 
+   just a small part. See `search.twig` for an example of another approach #}
+
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="row clearfix">
+  <ul class="grid no-bullet">
+  {% for post in posts %}
+  <li class=" column">
+    <div class="teacher-profile teacher-profile__content">
+    <h2><a href="{{post.link}}">{{post.title}}</a></h2>
+    <div>
+      <h3>Grades:</h3>
+      <ul class="no-bullet">
+        {% for item in post.terms('class')%}
+          <li> {{item.title}}</li>
+        {% endfor %}
+      </ul>
+      <h3>Subjects:</h3>
+      <ul class="no-bullet">
+        {% for item in post.terms('subject')%}
+          <li>{{item.title}}</li>
+        {% endfor %}
+      </ul>
+      <div class="section-margin">
+      <a href="mailto:{{post.email}}">{{post.email}}</a>
+      </div>
+    </div>
+  </div>
+  </li>
+  {% endfor %}
+</ul>
+	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+</div>
+{% endblock %}

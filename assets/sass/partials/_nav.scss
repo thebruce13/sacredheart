@@ -4,6 +4,7 @@
     top: -2rem;
     left: 2%;
     color: $white;
+    z-index: 2;
 }
 
 .admin-bar .skip-link:focus {
@@ -48,17 +49,17 @@
 
 .header-logo__text {
     padding-right: 3.5rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
-@media(min-width: $medium){
+@media(min-width: $medium) {
     .header-logo img {
         margin: 0.25rem 1rem -0.4em 0;
         height: 5rem;
     }
 
-    .header-logo__text{
+    .header-logo__text {
         font-size: 2rem;
     }
 }
@@ -112,21 +113,61 @@
 }
 
 /* Navbar container  */
-.menu-button{
+.menu-button {
     position: fixed;
     top: 0;
-    right:0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index:5;
-    width: 3rem;
+    right: 0;
+    display: block;
+    z-index: 5;
+    width: 2.5rem;
     height: 3rem;
     border: none;
     background: rgba($black, 0.9);
     color: $white;
     border-top: 5px solid $brand-red;
+    transition: right 0.3s;
 }
+
+.menu-button::before,
+.menu-button::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 1.5em;
+    border-top: 3px solid white;
+    transition: all 0.2s;
+}
+
+.menu-button::after {
+    height: 3px;
+    border-bottom: 3px solid white;
+}
+
+.menu-button::before {
+    margin-bottom: 3px;
+}
+
+.menu-button.is-open {
+    right: 250px;
+    
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    &::before {
+
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+        border-bottom: none;
+    }
+}
+
 .nav-main {
     position: fixed;
     top: 0;
@@ -139,7 +180,7 @@
     border-top: 5px solid $brand-red;
     transform: translatex(100%);
     transition: transform 0.2s ease-out;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .nav-main.is-open {
@@ -159,7 +200,7 @@
     }
 }
 
-.nav-main .navbar{
+.nav-main .navbar {
     display: flex;
     flex-direction: column;
 }
@@ -173,6 +214,10 @@
 }
 
 @media(min-width: $medium) {
+    .navbar{
+        padding: 0 0 0 0;
+    }
+
     .nav-main .navbar,
     .navbar {
         display: table;
@@ -194,8 +239,22 @@
     font-size: 16px;
     color: $white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 1rem 2rem 1rem 0.5rem;
+    text-align: left;
     text-decoration: none;
+}
+
+.prenav a:focus,
+.navbar a:focus{
+    outline: 1px dashed $brand-red;
+    outline-offset: -1px;
+}
+
+@media (min-width: $small){
+    .navbar a {
+        padding: 14px 16px;
+        text-align: center;
+    }
 }
 
 /* The dropdown container */
@@ -205,11 +264,54 @@
 
 /* Dropdown button */
 .dropdown .dropbtn {
-    position: relative;
-    margin: 0;
-    border: none;
-    outline: none;
+    position: absolute;
+    right: 0.5rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    width: 2rem;
+    height: 2rem;
+    border-top: 2px solid #666;
+    border-left: 2px solid #666;
+    border-bottom: 2px solid #202020;
+    border-right: 2px solid #202020;
+    background-color: hsla(0, 0%, 50%, 0.25);
     font-size: 16px;
+    text-align: center;
+    transition: 0.2s all;
+}
+
+
+.dropdown .dropbtn:active,
+.dropdown .dropbtn:focus {
+    border-right: 2px solid #666;
+    border-bottom: 2px solid #666;
+    border-left: 2px solid #202020;
+    border-top: 2px solid #202020;
+}
+
+@media (max-width: $medium) {
+    .is-open.dropdown .dropbtn {
+        border: 2px solid transparent;
+        background-color: #fff;
+    }
+}
+
+
+.is-open.dropdown .dropdown-content {
+    display: block;
+}
+
+
+@media (min-width: $medium) {
+    .dropdown .dropbtn {
+        float: none;
+        margin: 0 1rem 0 0;
+        border: none;
+        outline: none;
+        position: static;
+        background-color: transparent;
+        background-color: transparent;
+    }
 }
 
 .dropdown .dropbtn::after {
@@ -225,12 +327,21 @@
     border-top-color: $white;
 }
 
-/* Add a red background color to navbar links on hover */
-.navbar a:hover,
+@media (max-width: $medium) {
+    .is-open.dropdown .dropbtn::after {
+        border-top: 0 solid transparent;
+        border-bottom: 5px solid $brand-red;
+    }
+}
+
 .menu-item:hover {
-    text-decoration: underline;
     background-color: $brand-red;
 }
+
+.menu-item:hover>a {
+    text-decoration: underline;
+}
+
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
@@ -244,11 +355,27 @@
     z-index: 1;
 }
 
-@media (min-width: $medium){
+.dropdown-content.is-open {
+    display: block;
+}
+
+.dropdown-content li {
+    box-shadow: 0 11px 0 -10px $medium-gray;
+}
+
+.dropdown-content li:last-of-type{
+    box-shadow: none;
+}
+
+@media (min-width: $medium) {
     .dropdown-content {
         position: absolute;
     }
-    
+
+    .dropdown-content li {
+        box-shadow: none;
+    }
+
     /* Show the dropdown menu on hover */
     .dropdown:hover .dropdown-content {
         display: block;

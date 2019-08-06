@@ -1,7 +1,6 @@
 .footer{
     margin-top: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     background-color: $black;
     color: $white;
 }
@@ -32,6 +31,13 @@
     flex-direction: column;
     justify-items: center;
     align-items: flex-start;
+    text-align: center;
+}
+
+@media (min-width: $medium){
+    .footer-contact{
+        text-align: left;
+    }
 }
 
 .footer-social{
@@ -40,4 +46,17 @@
 
 .footer-copy{
     padding: 1rem 0 0;
+}
+
+@media (max-width: $small){
+    .footer-social.column.text-right,
+    .footer-contact{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-social{
+        margin-top: 0.5rem;
+    }
 }

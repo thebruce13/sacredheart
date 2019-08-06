@@ -4,6 +4,11 @@ svg.icon {
     height: 1em;
 }
 
+#content {
+    background-color: $white;
+    min-height: 65vh;
+}
+
 .content-wrapper a.read-more,
 .content-wrapper a:not([class]) {
     padding-left: 0.1em;
@@ -26,8 +31,18 @@ svg.icon {
     list-style-type: none;
 }
 
-.inline-list > li {
-display: inline-block;
+.inline-list>li {
+    display: inline-block;
+}
+
+.article-content {
+    padding: 0 1rem;
+}
+
+@media (min-width: $small) {
+    .article-content {
+        padding: 0;
+    }
 }
 
 .clearfix::before,
@@ -37,6 +52,10 @@ display: inline-block;
     clear: both;
 }
 
+.section-margin {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 @media (max-width:$small) {
     .hide-small {
         display: none !important;
@@ -49,13 +68,13 @@ display: inline-block;
     }
 }
 
-@media (min-width:$small)  {
+@media (min-width:$small) {
     .hide-medium-up {
         display: none !important;
     }
 }
 
-@media (max-width:$small)  {
+@media (max-width:$small) {
     .hide-medium-down {
         display: none !important;
     }
@@ -67,13 +86,13 @@ display: inline-block;
     }
 }
 
-@media (min-width:$medium)  {
+@media (min-width:$medium) {
     .hide-large-up {
         display: none !important;
     }
 }
 
-@media (max-width:$medium)  {
+@media (max-width:$medium) {
     .hide-large-down {
         display: none !important;
     }

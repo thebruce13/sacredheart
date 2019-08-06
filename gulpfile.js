@@ -9,6 +9,8 @@ var browserSync = require('browser-sync').create();
 var svgstore = require('gulp-svgstore');
 var svgmin = require('gulp-svgmin');
 var path = require('path');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
 sass.compiler = require('node-sass');
 
 
@@ -47,6 +49,18 @@ gulp.task('svgstore', function () {
       .pipe(gulp.dest('svg'));
 });
 
+ 
+gulp.task('js', () =>
+    gulp.src('src/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(concat('all.js'))
+        .pipe(gulpif(PRODUCTION !== true, sourcemaps.write('.')))
+        .pipe(gulp.dest('./js'))
+);
+
 gulp.task('browser-sync', function (done) {
   browserSync.reload();
   done();
@@ -64,6 +78,7 @@ gulp.task('sync', function(){
   });
   gulp.series(['sass', 'svgstore']);
   gulp.watch('./assets/sass/**/*.scss', gulp.series(['sass', 'browser-stream']));
+  gulp.watch('./assets/js/*.js', gulp.series(['js', 'browser-sync']));
   gulp.watch('./assets/svg/*.svg', gulp.series(['svgstore', 'browser-sync']));
   gulp.watch('./**/*.twig', gulp.series(['browser-sync']));
 })

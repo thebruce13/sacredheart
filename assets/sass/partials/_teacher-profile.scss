@@ -8,8 +8,20 @@
     background-color: $light-gray;
 }
 
+.teacher-profile__image + .teacher-profile__content {
+    padding-top: 1rem;
+    max-width: 100%;
+}
+
 .teacher-profile__content {
     display: flex;
+}
+
+.teacher-profile__content .column:first-of-type{
+    margin-right: 1rem;
+}
+
+.teacher-profile__content + * {
     padding-top: 1rem;
 }
 

@@ -23,7 +23,7 @@
                             <li><a href="#">Smart Tuition</a></li>
                         </ul>
                     </div>
-                    <button id="js-menu-button" data-menu="nav-main" class="hide-large-up menu-button">=</button>
+                    <button id="js-menu-button" data-menu="nav-main" class="hide-large-up menu-button"><span class="show-for-sr">Menu</span></button>
                 </div>
             </div>
             <nav class="nav-main" id="nav-main" role="navigation">
@@ -34,7 +34,7 @@
         {% endblock %}
     </header>
 
-    <section class="content-wrapper" id="content" role="main">
+    <section class="content-wrapper row" id="content" role="main">
         {% if title %}
         <h1>{{title}}</h1>
         {% endif %}

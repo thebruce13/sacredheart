@@ -6,27 +6,37 @@
 		<section class="article-content row clearfix">
 			<h1 class="article-h1">{{post.title}}</h1>
 			<div class="teacher-profile float-right">
-				<img class="teacher-profile__image" src="{{ post.thumbnail.src|resize('200','250') }}" />
+				{% if post.thumbnail.src %}
+					<img class="teacher-profile__image" src="{{ post.thumbnail.src|resize('200','250') }}" />
+				{% endif %}
 				<div class="teacher-profile__content">
-					<div class="column">
-						<h3>Subjects:</h3>
-						<ul class="no-bullet inline-list">
-							{% for item in post.terms('subject') %}
-							<li>{{ item }}</li>
-							{% endfor %}
-						</ul>
-					</div>
-					<div class="column">
-						<h3>Grades:</h3>
-						<ul class="no-bullet inline-list">
-							{% for item in post.terms('class') %}
-							<li>{{ item }}</li>
-							{% endfor %}
-						</ul>
-					</div>
+					{% if post.terms('subject') %}
+						<div class="column">
+							<h3>Subjects:</h3>
+							<ul class="no-bullet inline-list">
+								{% for item in post.terms('subject') %}
+								<li>{{ item }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
+					{% if post.terms('class') %}
+						<div class="column">
+							<h3>Grades:</h3>
+							<ul class="no-bullet inline-list">
+								{% for item in post.terms('class') %}
+								<li>{{ item }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
 				</div>
-				<a href="{{post.rules.url}}">Classroom Rules</a>
-				<a href="mailto:{{post.email}}">{{post.email}}</a>
+				{% if post.rules.url %}
+					<a href="{{post.rules.url}}">Classroom Rules</a>
+				{% endif %}
+				{% if post.email %}
+					<a href="mailto:{{post.email}}">{{post.email}}</a>
+				{% endif %}
 			</div>
 			<div class="article-body">
 				{{post.content}}

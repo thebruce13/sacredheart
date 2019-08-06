@@ -7,11 +7,13 @@
     flex-wrap: wrap;
     background-color: $light-gray;
     color: $black;
+    text-decoration: none;
     text-decoration: underline transparent;
 }
 
 .card:hover .card__heading,
 .card:hover .card__button {
+    text-decoration: underline;
     text-decoration: underline currentColor;
 }
 
@@ -23,6 +25,7 @@
 .card-icons {
     margin-top: 2.5rem;
     padding-top: 0;
+    width: 100%;
 }
 
 @media (min-width: 42em) {

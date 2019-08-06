@@ -3,6 +3,9 @@
 {% block content %}
 	<div class="content-wrapper">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		{% if post.thumbnail %}
+		<img class="hero hero--small" src="{{TimberImage(post.thumbnail).src|resize(1200, 200)}}" alt="{{TimberImage(post.thumbnail.alt)}}" />
+		{% endif %}
 			<section class="article-content row clearfix">
 				<h1 class="article-h1">{{post.title}}</h1>
 				<div class="article-body">

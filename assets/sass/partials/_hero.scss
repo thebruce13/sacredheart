@@ -1,17 +1,38 @@
-.hero{
+.hero {
     display: flex;
+    margin-left: -1rem;
+    width: calc(100% + 2rem);
     margin-bottom: 2rem;
-
-    min-height: 15vw;
+    min-height: 30vw;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
-.hero > .row{
+.hero--small {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    min-height: 0;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.hero>.row {
     margin-top: auto;
     margin-bottom: auto;
-    background-color: rgba($black,0.75);
+    background-color: rgba($black, 0.75);
     color: $white;
-    padding: 1rem;
+    padding: 2rem;
+}
+
+@media (min-width: $medium) {
+    .hero {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .hero>.row{
+        padding: 1rem;
+    }
 }

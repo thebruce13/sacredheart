@@ -63,7 +63,8 @@
                 <img class="news-image" src="{{ post.thumbnail.src }}" alt="{{post.thumbnail.alt}}" />
                 {% endif %}
                 <div>
-                    <h3>{{post.title}}</h3><strong>{{post.date}}</strong>
+                   <h3> <a href="{{post.link}}">{{post.title}}</a></h3>
+				   <strong>{{post.date}}</strong>
                 </div>
 
                 {{post.preview}}
