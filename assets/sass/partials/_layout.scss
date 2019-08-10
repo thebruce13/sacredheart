@@ -11,7 +11,7 @@
     }
 }
 
-.grid > .column {
+.grid>.column {
     display: flex;
     flex-wrap: wrap;
     flex: 1;
@@ -24,7 +24,8 @@
 .text-right {
     text-align: right;
 }
-.column.text-right{
+
+.column.text-right {
     justify-content: flex-end;
 }
 
@@ -32,6 +33,14 @@
     text-align: center;
 }
 
-.float-right{
+.float-right {
     float: right;
+}
+
+@media (max-width: $small) {
+    .reverse-order-small {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+    }
 }
